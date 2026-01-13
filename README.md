@@ -1,111 +1,92 @@
-# Customer Churn Prediction (Beginner ML Project)
+# Beginner Machine Learning Projects (Tabular Data)
 
-This is a **beginner-level machine learning project** created as a first hands-on step into applied ML.  
-The goal is to understand the **full ML workflow**, not to build a production-grade system.
+This repository contains a collection of **beginner-level machine learning projects** built to practice the full ML workflow on **different tabular datasets**.
 
-The project focuses on **customer churn prediction** using a classical, interpretable model.
+Each notebook focuses on a new dataset but follows the same core structure:
+- clean preprocessing
+- leakage-safe pipelines
+- simple, interpretable models
+- correct evaluation metrics
 
----
-
-## Problem Statement
-
-Customer churn occurs when a customer stops using a service.  
-From a business perspective, **missing a customer who is about to churn is more costly than raising a false alarm**.
-
-This project answers the question:
-
-> *Can we identify customers who are likely to churn, and understand why they leave?*
+The goal is **learning and consistency**, not production-grade systems.
 
 ---
 
-## Dataset
+## Included Projects
 
-- **Dataset**: Telco Customer Churn  
-- **Type**: Tabular data (numeric + categorical features)
-- **Target variable**: `Churn` (Yes / No)
+### 1) Customer Churn Prediction
+**Task:** Binary classification  
+**Goal:** Predict whether a customer will churn
 
----
-
-## Approach
-
-The project follows a **clean, end-to-end ML pipeline**:
-
-1. **Data preparation**
-   - Type correction (`TotalCharges` converted to numeric)
-   - Train / test split with stratification
-
-2. **Preprocessing**
-   - Missing value imputation (median / most frequent)
-   - Feature scaling (StandardScaler)
-   - One-hot encoding for categorical variables
-   - Implemented via `ColumnTransformer` to avoid data leakage
-
-3. **Model**
-   - Logistic Regression (chosen for simplicity and interpretability)
-   - Implemented inside a `Pipeline`
-
-4. **Evaluation**
-   - Precision, Recall, F1-score
-   - Focus on **recall for churn (Yes)** due to business cost of false negatives
-
-5. **Optimization**
-   - Threshold tuning to prioritize recall
-   - Final decision threshold: **0.3**
+**Highlights:**
+- ColumnTransformer + Pipeline (leakage-safe)
+- Logistic Regression
+- Threshold tuning to improve recall on churned customers
+- Business-oriented interpretation
 
 ---
 
-## Results
+### 2) Student Performance Prediction
+**Task:** Classification / Regression (depending on target)  
+**Goal:** Predict student academic performance based on demographic and study-related features
 
-Using threshold tuning:
-
-- **Churn Recall (Yes)**: ~**75%**
-- The model successfully identifies **3 out of 4 customers who will churn**
-- Accepts a controlled increase in false positives to reduce missed churn cases
-
----
-
-## Business Insights
-
-Key factors associated with higher churn:
-- Month-to-month contracts
-- Fiber optic internet service
-- Higher total charges
-- Lack of online security or tech support
-
-Key factors associated with retention:
-- Longer customer tenure
-- Two-year contracts
-- Lower monthly charges
+**Highlights:**
+- Handling categorical + numeric features
+- Feature scaling and encoding
+- Interpretable baseline model
+- Focus on understanding feature impact on performance
 
 ---
 
-## Technologies Used
+## Common ML Workflow Used
+All notebooks follow the same end-to-end structure:
 
+1. Dataset exploration & cleaning  
+2. Train / test split  
+3. Preprocessing with `ColumnTransformer`  
+4. Model training (baseline first)  
+5. Evaluation (precision, recall, F1, or regression metrics)  
+6. Interpretation of results  
+
+This makes the repository easy to **extend with new datasets**.
+
+---
+
+## Repository Structure
+```
+
+Beginner-ML-Project/
+│
+├── churn.ipynb                # Customer churn project
+├── StudentPerformance.ipynb   # Student performance project
+├── WalkTrough.pdf             # Notes / learning walkthrough
+└── README.md
+
+```
+
+---
+
+## Tech Stack
 - Python
-- pandas
-- NumPy
+- pandas, NumPy
 - scikit-learn
 - Jupyter Notebook
 
 ---
 
-## Project Status
-
-🚧 **Learning project (early stage)**  
-This is **not a final or production-ready system**.  
-The purpose is to practice:
-- ML pipelines
-- Evaluation on imbalanced data
-- Business-oriented metric selection (recall vs accuracy)
-
-Further improvements (future work):
-- Try tree-based models (Random Forest, XGBoost)
-- Hyperparameter tuning
-- Cross-validation
-- Model persistence and deployment
+## How to Run
+1. Clone the repository
+2. Install dependencies:
+   - `pip install pandas numpy scikit-learn jupyter`
+3. Run:
+   - `jupyter notebook`
+4. Open any notebook and run cells top-to-bottom
 
 ---
 
-## Author
+## Project Status
+Ongoing learning repository.  
+New notebooks will be added for different datasets and ML tasks (classification & regression).
 
-Beginner ML project created as part of a personal learning journey.
+## Author
+Created as part of a personal machine learning learning journey.
