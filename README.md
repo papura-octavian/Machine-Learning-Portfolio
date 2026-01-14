@@ -1,67 +1,37 @@
-# Beginner Machine Learning Projects (Tabular Data)
+# Machine Learning Projects & Experiments
 
-This repository contains a collection of **beginner-level machine learning projects** built to practice the full ML workflow on **different tabular datasets**.
+This repository contains a growing collection of machine learning notebooks built for learning, experimentation, and portfolio development.
 
-Each notebook focuses on a new dataset but follows the same core structure:
-- clean preprocessing
-- leakage-safe pipelines
-- simple, interpretable models
+Projects cover different datasets and problem types, with a focus on:
+- clean and consistent ML workflows
+- leakage-safe preprocessing pipelines
+- simple, interpretable baseline models
 - correct evaluation metrics
 
-The goal is **learning and consistency**, not production-grade systems.
+The goal is understanding and progression, not production-ready systems.
 
 ---
 
 ## Included Projects
 
-### 1) Customer Churn Prediction
-**Task:** Binary classification  
-**Goal:** Predict whether a customer will churn
+- **Customer Churn Prediction**  
+  Binary classification using tabular data, with emphasis on recall and business interpretation.
 
-**Highlights:**
-- ColumnTransformer + Pipeline (leakage-safe)
-- Logistic Regression
-- Threshold tuning to improve recall on churned customers
-- Business-oriented interpretation
+- **Student Performance Prediction**  
+  Classification / regression on educational data, focusing on feature preprocessing and model interpretability.
 
 ---
 
-### 2) Student Performance Prediction
-**Task:** Classification / Regression (depending on target)  
-**Goal:** Predict student academic performance based on demographic and study-related features
+## Common Workflow
 
-**Highlights:**
-- Handling categorical + numeric features
-- Feature scaling and encoding
-- Interpretable baseline model
-- Focus on understanding feature impact on performance
-
----
-
-## Common ML Workflow Used
-All notebooks follow the same end-to-end structure:
-
-1. Dataset exploration & cleaning  
+All notebooks generally follow the same structure:
+1. Data exploration and cleaning  
 2. Train / test split  
-3. Preprocessing with `ColumnTransformer`  
-4. Model training (baseline first)  
-5. Evaluation (precision, recall, F1, or regression metrics)  
-6. Interpretation of results  
+3. Preprocessing with pipelines  
+4. Model training  
+5. Evaluation and interpretation  
 
-This makes the repository easy to **extend with new datasets**.
-
----
-
-## Repository Structure
-```
-
-Beginner-ML-Project/
-│
-├── churn.ipynb                # Customer churn project
-├── StudentPerformance.ipynb   # Student performance project
-└── README.md
-
-```
+This makes the repository easy to extend with new datasets and tasks.
 
 ---
 
@@ -73,19 +43,6 @@ Beginner-ML-Project/
 
 ---
 
-## How to Run
-1. Clone the repository
-2. Install dependencies:
-   - `pip install pandas numpy scikit-learn jupyter`
-3. Run:
-   - `jupyter notebook`
-4. Open any notebook and run cells top-to-bottom
-
----
-
-## Project Status
+## Status
 Ongoing learning repository.  
-New notebooks will be added for different datasets and ML tasks (classification & regression).
-
-## Author
-Created as part of a personal machine learning learning journey.
+New projects and data types will be added over time.
